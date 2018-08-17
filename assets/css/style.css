@@ -4,6 +4,12 @@ body {
   background-position: center
 }
 
+.text-pop {
+  color: white;
+  font-size: 25px;
+  text-shadow: 2px 2px black;
+}
+
 /* .hide {
   display: none;
 }

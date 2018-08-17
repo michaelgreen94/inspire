@@ -1,7 +1,5 @@
 import TodoService from "./todo-service.js";
 
-
-
 var todoService = new TodoService
 
 // Use this getTodos function as your callback for all other edits
@@ -13,13 +11,18 @@ function getTodos() {
 function draw(todos) {
 	//WHAT IS MY PURPOSE?
 	//BUILD YOUR TODO TEMPLATE HERE
-	var template = ''
+	let template = `
+		`
+
 	//DONT FORGET TO LOOP
+	document.getElementById('todo').innerHTML = template
 }
 
 
 export default class TodoController {
 	constructor() {
+		todoService.getTodos(draw)
+		draw()
 		// IF YOU WANT YOUR TODO LIST TO DRAW WHEN THE PAGE FIRST LOADS WHAT SHOULD YOU CALL HERE???
 	}
 	// You will need four methods
@@ -36,7 +39,11 @@ export default class TodoController {
 		var form = e.target
 		var todo = {
 			// DONT FORGET TO BUILD YOUR TODO OBJECT
+			description: { type: String, required: true },      //has to be a string
+			completed: { type: Boolean, required: true },       //the server will do this for you
+			user: { type: String }                             //the server will do this for you
 		}
+
 
 		//PASSES THE NEW TODO TO YOUR SERVICE
 		//DON'T FORGET TO REDRAW THE SCREEN WITH THE NEW TODO

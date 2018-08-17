@@ -1,5 +1,3 @@
-
-
 const todoApi = axios.create({
 	baseURL: 'https://bcw-sandbox.herokuapp.com/api/YOURNAME/todos/',
 	timeout: 3000
@@ -15,10 +13,12 @@ let todoList = []
 export default class TodoService {
 
 	getTodos(draw) {
-		console.log("Getting the Todo List")
+		// console.log("Getting the Todo List")
 		todoApi.get('')
 			.then((res) => { // <-- WHY IS THIS IMPORTANT????
-
+				let todos = res.data.data
+				console.log('todos var', todos)
+				draw(todos)
 			})
 			.catch(logError)
 	}
