@@ -9,13 +9,16 @@ function getTodos() {
 }
 
 function draw(todos) {
+	let template = ''
 	console.log(todos);
-
+	for (let i = 0; i < todos.length; i++) {
+		const todo = todos[i];
+		template += `
+		<div>${todo.description}</div>
+		<button>delete</button>`
+	}
 	//WHAT IS MY PURPOSE?
 	//BUILD YOUR TODO TEMPLATE HERE
-	let template = `
-	did it work`
-
 	//DONT FORGET TO LOOP
 	document.getElementById('todo').innerHTML = template
 }
@@ -41,9 +44,9 @@ export default class TodoController {
 		var form = e.target
 		var todo = {
 			// DONT FORGET TO BUILD YOUR TODO OBJECT
-			description: form.description.value,      //has to be a string
-			completed: false,       //the server will do this for you
-			user: 'Michael'                 //the server will do this for you
+			description: form.description.value, //has to be a string
+			completed: false, //the server will do this for you
+			user: 'Michael' //the server will do this for you
 		}
 		//PASSES THE NEW TODO TO YOUR SERVICE
 		//DON'T FORGET TO REDRAW THE SCREEN WITH THE NEW TODO
