@@ -1,5 +1,5 @@
 const todoApi = axios.create({
-	baseURL: 'https://bcw-sandbox.herokuapp.com/api/YOURNAME/todos/',
+	baseURL: 'https://bcw-sandbox.herokuapp.com/api/Michael/todos/',
 	timeout: 3000
 });
 
@@ -23,11 +23,11 @@ export default class TodoService {
 			.catch(logError)
 	}
 
-	addTodo(todo) {
+	addTodo(todo, getTodos) {
 		// WHAT IS THIS FOR???
 		todoApi.post('', todo)
 			.then(function (res) { // <-- WHAT DO YOU DO AFTER CREATING A NEW TODO?
-
+				getTodos()
 			})
 			.catch(logError)
 	}

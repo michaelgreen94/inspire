@@ -12,8 +12,8 @@
 	<div id="quote" class="text-pop">The Quote</div>
 
 	<div id="todo"></div>
-	<form>
-		<input type="text" placeholder="what needs done">
+	<form onsubmit="app.controllers.toDoController.addTodoFromForm(event)">
+		<input name="description" type="text" placeholder="what needs done">
 		<input type="submit">
 	</form>
 
