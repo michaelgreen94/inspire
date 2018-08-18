@@ -14,8 +14,9 @@ function draw(todos) {
 	for (let i = 0; i < todos.length; i++) {
 		const todo = todos[i];
 		template += `
-		<div>${todo.description}</div>
-		<button>delete</button>`
+		<div>${todo.description}
+		<i class="fas fa-times" onclick="app.controllers.toDoController.removeTodo('${todo._id}')"></i>
+		</div>`
 	}
 	//WHAT IS MY PURPOSE?
 	//BUILD YOUR TODO TEMPLATE HERE
@@ -57,12 +58,14 @@ export default class TodoController {
 
 	toggleTodoStatus(todoId) {
 		// asks the service to edit the todo status
-		todoService.toggleTodoStatus(todoId, getTodos)
+		// todoService.toggleTodoStatus(todoId, getTodos)
 		// YEP THATS IT FOR ME
 	}
 
 	removeTodo(todoId) {
+		// console.log('removeTodo');
 		// ask the service to run the remove todo with this id
+		todoService.removeTodo(todoId, getTodos)
 
 		// ^^^^ THIS LINE OF CODE PROBABLY LOOKS VERY SIMILAR TO THE toggleTodoStatus
 	}

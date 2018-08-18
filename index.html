@@ -3,6 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Inspire</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+	  crossorigin="anonymous">
 	<link rel="stylesheet" href="assets/css/style.css">
 </head>
 
@@ -11,13 +13,17 @@
 
 	<div id="quote" class="text-pop">The Quote</div>
 
-	<div id="todo"></div>
-	<form onsubmit="app.controllers.toDoController.addTodoFromForm(event)">
-		<input name="description" type="text" placeholder="what needs done">
-		<input type="submit">
-	</form>
+	<div class="todo-container">
+		<div id="todo"></div>
+		<form onsubmit="app.controllers.toDoController.addTodoFromForm(event)">
+			<input name="description" type="text" placeholder="what needs done">
+			<input type="submit">
+		</form>
+	</div>
 
-
+	<div>
+		<h1>GOOD MORNING, MICHAEL</h1>
+	</div>
 
 
 	<!--JS Libraries-->
