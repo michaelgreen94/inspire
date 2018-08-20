@@ -8,16 +8,27 @@ function getTodos() {
 	todoService.getTodos(draw)
 }
 
+// let checked = todos.find(t => t.completed)
+// if(checked = true) {
+// 	document.getElementById('chk').checked = true
+// }
+
 function draw(todos) {
 	let template = ''
 	// console.log(todos);
 	for (let i = 0; i < todos.length; i++) {
 		const todo = todos[i];
+		let ex = ''
+		let checked = ''
+		if (todo.completed) {
+			checked = 'checked'
+			ex = `<i class="fas fa-times red" onclick="app.controllers.toDoController.removeTodo('${todo._id} ')"></i>`
+		}
 		template += `
 		<div class="text-pop pb-3">
-		<input type="checkbox" name="task" onclick="app.controllers.toDoController.toggleTodoStatus('${todo._id}')">
+		<input type="checkbox" name="task" onclick="app.controllers.toDoController.toggleTodoStatus('${todo._id}')" ${checked}>
 		${todo.description}
-		<i class="fas fa-times" onclick="app.controllers.toDoController.removeTodo('${todo._id}')"></i>
+		${ex}
 		</div>`
 	}
 	//WHAT IS MY PURPOSE?

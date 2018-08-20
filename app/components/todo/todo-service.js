@@ -1,5 +1,5 @@
 const todoApi = axios.create({
-	baseURL: 'https://bcw-sandbox.herokuapp.com/api/Michael/todos/',
+	baseURL: 'https://bcw-sandbox.herokuapp.com/api/Mike/todos/',
 	timeout: 3000
 });
 
@@ -8,7 +8,7 @@ function logError(e) {
 }
 
 
-let todoList = []
+let todos
 
 export default class TodoService {
 
@@ -16,8 +16,8 @@ export default class TodoService {
 		// console.log("Getting the Todo List")
 		todoApi.get('')
 			.then((res) => { // <-- WHY IS THIS IMPORTANT????
-				let todos = res.data.data
-				console.log('todos var', todos)
+				todos = res.data.data
+				console.log(todos)
 				draw(todos)
 			})
 			.catch(logError)
@@ -35,20 +35,18 @@ export default class TodoService {
 	toggleTodoStatus(todoId, getTodos) {
 		// MAKE SURE WE THINK THIS ONE THROUGH
 		//STEP 1: Find the todo by its index **HINT** todoList
-		console.log('hello')
-		var todo = {
-			completed: false
-		} ///MODIFY THIS LINE
+		var todo = todos.find(rId => {
+			return todoId == rId._id
+		}) ///MODIFY THIS LINE
+		todo.completed = !todo.completed
 
 		//STEP 2: Change the completed flag to the opposite of what is is **HINT** todo.completed = !todo.completed
 		todoApi.put(todoId, todo)
 			.then(function (res) {
 				//DO YOU WANT TO DO ANYTHING WITH THIS?
-				res.config = todo
-				console.log('toggle', res)
-				todo.completed = !todo.completed
+				let wait = setTimeout(getTodos, 500)
+				// getTodos()
 			})
-		getTodos(todo)
 			.catch(logError)
 	}
 

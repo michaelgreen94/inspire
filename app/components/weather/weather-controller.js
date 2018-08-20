@@ -22,7 +22,7 @@ export default class WeatherController {
 	}
 	getWeather() {
 		weatherService.getWeather(data => {
-			console.log(data);
+			// console.log(data);
 			drawWeather(data)
 		})
 	}

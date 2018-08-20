@@ -44,6 +44,10 @@ body {
   text-shadow: 2px 2px black;
 }
 
+.red {
+  color: red;
+}
+
 /* .hide {
   display: none;
 }
