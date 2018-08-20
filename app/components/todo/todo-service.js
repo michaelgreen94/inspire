@@ -35,7 +35,7 @@ export default class TodoService {
 	toggleTodoStatus(todoId, getTodos) {
 		// MAKE SURE WE THINK THIS ONE THROUGH
 		//STEP 1: Find the todo by its index **HINT** todoList
-
+		console.log('hello')
 		var todo = {
 			completed: false
 		} ///MODIFY THIS LINE
@@ -44,9 +44,11 @@ export default class TodoService {
 		todoApi.put(todoId, todo)
 			.then(function (res) {
 				//DO YOU WANT TO DO ANYTHING WITH THIS?
+				res.config = todo
 				console.log('toggle', res)
 				todo.completed = !todo.completed
 			})
+		getTodos(todo)
 			.catch(logError)
 	}
 
