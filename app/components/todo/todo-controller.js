@@ -14,7 +14,7 @@ function draw(todos) {
 	for (let i = 0; i < todos.length; i++) {
 		const todo = todos[i];
 		template += `
-		<div class="text-pop">
+		<div class="text-pop pb-3">
 		<input type="checkbox" name="task">
 		${todo.description}
 		<i class="fas fa-times" onclick="app.controllers.toDoController.removeTodo('${todo._id}')"></i>
