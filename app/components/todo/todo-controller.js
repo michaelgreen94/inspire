@@ -9,6 +9,7 @@ function getTodos() {
 }
 
 function draw(todos) {
+	let length = "ToDos left:" + todos.length
 	let template = ''
 	// console.log(todos);
 	for (let i = 0; i < todos.length; i++) {
@@ -30,6 +31,7 @@ function draw(todos) {
 	//BUILD YOUR TODO TEMPLATE HERE
 	//DONT FORGET TO LOOP
 	document.getElementById('todo').innerHTML = template
+	document.getElementById('todo-len').innerHTML = length
 }
 
 
