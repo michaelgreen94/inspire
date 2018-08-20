@@ -8,11 +8,6 @@ function getTodos() {
 	todoService.getTodos(draw)
 }
 
-// let checked = todos.find(t => t.completed)
-// if(checked = true) {
-// 	document.getElementById('chk').checked = true
-// }
-
 function draw(todos) {
 	let template = ''
 	// console.log(todos);

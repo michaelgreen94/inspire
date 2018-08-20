@@ -44,8 +44,8 @@ export default class TodoService {
 		todoApi.put(todoId, todo)
 			.then(function (res) {
 				//DO YOU WANT TO DO ANYTHING WITH THIS?
-				let wait = setTimeout(getTodos, 500)
-				// getTodos()
+				// let wait = setTimeout(getTodos, 500)
+				getTodos()
 			})
 			.catch(logError)
 	}
