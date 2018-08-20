@@ -14,17 +14,12 @@
 	<div id="quote" class="text-pop">The Quote</div>
 
 	<div class="todo-container">
-		<div id="todo"></div>
 		<form onsubmit="app.controllers.toDoController.addTodoFromForm(event)">
 			<input name="description" type="text" placeholder="what needs done">
 			<input type="submit">
 		</form>
+		<div id="todo"></div>
 	</div>
-
-	<div>
-		<h1>GOOD MORNING, MICHAEL</h1>
-	</div>
-
 
 	<!--JS Libraries-->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>

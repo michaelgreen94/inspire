@@ -14,7 +14,9 @@ function draw(todos) {
 	for (let i = 0; i < todos.length; i++) {
 		const todo = todos[i];
 		template += `
-		<div>${todo.description}
+		<div class="text-pop">
+		<input type="checkbox" name="task">
+		${todo.description}
 		<i class="fas fa-times" onclick="app.controllers.toDoController.removeTodo('${todo._id}')"></i>
 		</div>`
 	}
@@ -58,7 +60,7 @@ export default class TodoController {
 
 	toggleTodoStatus(todoId) {
 		// asks the service to edit the todo status
-		// todoService.toggleTodoStatus(todoId, getTodos)
+		todoService.toggleTodoStatus(todoId, getTodos)
 		// YEP THATS IT FOR ME
 	}
 

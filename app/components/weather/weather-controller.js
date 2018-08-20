@@ -6,9 +6,11 @@ const outside = document.getElementById('weather')
 function drawWeather(data) {
 	let icon = "https://openweathermap.org/img/w/" + data.weather[0].icon + ".png"
 	let template = `
+	<div class="weather">
 	<img src="${icon}" />
 	<div>${data.main.temp}F°</div>
-	<div>${data.name}</div>`
+	<div>${data.name}</div>
+	</div>`
 	outside.innerHTML = template
 }
 

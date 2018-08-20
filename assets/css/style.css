@@ -4,6 +4,40 @@ body {
   background-position: center
 }
 
+.weather {
+  display: inline-block;
+  position: absolute;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.486);
+  padding: 0px 10px 5px 10px;
+  color: white;
+  font-size: 25px;
+  text-shadow: 2px 2px black;
+  border-radius: 25%;
+}
+
+.quote {
+  position: absolute;
+  bottom: 10px;
+  width: 99%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.user {
+  position: absolute;
+  top: 50%;
+  margin: 0 auto;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.486);
+  display: inline-block;
+}
+
+.todo-container {
+  background-color: rgba(0, 0, 0, 0.486);
+  display: inline-block;
+}
+
 .text-pop {
   color: white;
   font-size: 25px;
